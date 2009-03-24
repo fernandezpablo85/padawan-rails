@@ -1,0 +1,15 @@
+<h1>Create Course </h1>
+
+<%=error_messages_for :course %>
+
+<% form_for @course, :action => 'create' do |f| %>
+  <%= f.label :name, "Name" %><br/>
+  <%= f.text_field :name %> <br/>
+  <%= f.label :description, "Description" %><br/>
+  <%= f.text_area :description %><br/>
+  <%= f.submit "create" %>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to "Cancel" , courses_path %>
+<% end %>

@@ -1,0 +1,139 @@
+
+DomainObject.sanitize_html!
+- should be called before saving the object
+- should remove tags when called
+
+Student
+- should not be able to attend to shifts in a same time
+- should be able to attend to shifts in a different time
+
+Shift.find_availables_for(student)
+- should return an empty array if the user has 3 types of shifts_found
+- should return an array of available shifts
+
+Teacher.available_for(time)
+- should return teachers that do not contain that time
+
+Teacher
+- should return the occupied times without repetition
+- should not be available for an already assigned time
+- should be available for a shift with a different time
+
+CoursesController DELETE /courses/:course_id
+- should delete the given course and render the Course list
+
+CoursesController PUT /courses/:course_id [Bad Input]
+- should render Course edit page for the user to correct the errors
+
+CoursesController PUT /courses/:course_id [Good Input]
+- should render Course index page after update
+
+CoursesController POST /courses [Bad Input]
+- should render the Course creation page for the user to correct the errors
+
+CoursesController POST /courses [Good Input]
+- should render Courses index page after creation
+
+CoursesController GET /courses/new
+- should redirect to Course creation page
+- should create a fresh course for user input
+
+CoursesController GET /courses/:course_id
+- should redirect to Course details page
+- should fetch a course from DB
+
+CoursesController GET /courses
+- should redirect to Course index page
+- should fetch all courses
+
+InscriptionsController DELETE /students/:student_id/inscriptions/:id
+- Should delete the inscription
+
+InscriptionsController POST /students/:student_id/inscribe/:shift_id
+- Should add the inscription to the student
+
+InscriptionsController GET /students/:student_id/inscriptions
+- Should populate @shifts with available shifts
+
+StudentsController DELETE /student/:student_id
+- Should delete the student and redirect to students list
+
+StudentsController PUT /student/:student_id [Bad Input]
+- Should not update the student and render the template again
+
+StudentsController PUT /student/:student_id [Good Input]
+- Should update the student and render the student list
+
+StudentsController POST /students [Bad Input]
+- Should not create a student and render the new template again
+
+StudentsController POST /students [Good Input]
+- Should create a new student and render students list
+
+StudentsController GET /students/new [Good Input]
+- Should render student creation view
+
+StudentsController GET /student/:student_id
+- Should render student details template
+- Should fetch one student by ID
+
+StudentsController GET /student/:student_id
+- Should render student details template
+- Should fetch one student by ID
+
+StudentsController GET /students
+- Should render student list template
+- Should fetch all students
+
+TeachersController DELETE /teacher/:teacher_id
+- Should fail and inform errors if the teacher has courses assigned
+- Should delete the teacher and redirect to teachers list
+
+TeachersController PUT /teacher/:teacher_id [Bad Input]
+- Should not update the teacher and render the template again
+
+TeachersController PUT /teacher/:teacher_id [Good Input]
+- Should update the teacher and render the teacher list
+
+TeachersController POST /teachers [Bad Input]
+- Should not create a teacher and render the new template again
+
+TeachersController POST /teachers [Good Input]
+- Should create a new teacher and render teachers list
+
+TeachersController GET /teachers/new [Good Input]
+- Should render teacher creation view
+
+TeachersController GET /teacher/:teacher_id
+- Should render teacher details template
+- Should fetch one teacher by ID
+
+TeachersController GET /teacher/:teacher_id
+- Should render teacher details template
+- Should fetch one teacher by ID
+
+TeachersController GET /teachers
+- Should render teacher list template
+- Should fetch all teachers
+
+ShiftsController POST /shifts/add_teacher
+- Should update the shift with the new teacher
+
+ShiftsController POST /shifts/list_teachers
+- Should find all available teachers for the shift
+
+ShiftsController DELETE /shift/:shift_id
+- Should delete the shift and redirect to the course path
+
+ShiftsController POST /shifts [Bad Input]
+- Should not create a new shift and render the shift form again
+
+ShiftsController POST /shifts [Good Input]
+- Should create a valid new shift and redirect to the course path
+
+ShiftsController GET /shift/new
+- Should create a fresh shift and render the new template
+
+Finished in 0.743261 seconds
+
+55 examples, 0 failures

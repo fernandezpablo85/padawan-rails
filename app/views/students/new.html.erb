@@ -1,0 +1,14 @@
+<h1>Create a new Student </h1>
+<%= error_messages_for :student,  :header_message => "Problems Saving Student",
+                                  :message => "Please review the errors and try again" %>
+<% form_for :student, @student, :url => {:action => "create"} do |f| %>
+  <%= f.label :name, "Name:" %><br/>
+  <%= f.text_field :name %><br/>
+  <%= f.label :age, "Age:" %><br/>
+  <%= f.text_field :age %><br/>
+  <%= f.submit "Create" %>
+<% end %>
+
+<% content_for :actions do%>
+  <%= link_to "Cancel", students_path %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Teacher Details</h3>
+
+<%= error_messages_for :teacher %>
+
+Name: <%= @teacher.name %> <br/>
+Mail: <%= mail_to @teacher.mail %> <br/>
+
+<%content_for :actions do %>
+  <%= link_to "Edit", edit_teacher_path(@teacher) %>
+  <%= link_to "Delete", teacher_path(@teacher), :confirm => "Are you sure?", :method => :delete %>
+  <%= link_to "Back To List", teachers_path %>
+<% end %>

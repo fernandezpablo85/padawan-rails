@@ -1,0 +1,13 @@
+<h1>Teachers List</h1>
+
+<% @teachers.each do |teacher| %>
+  <div id="row_<%=teacher.id%>">
+    Name: <%= link_to teacher.name, teacher_path(teacher) %><br/>
+    Mail: <%= teacher.mail %><br/>
+    <hr/>
+  </div>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to "Create New Teacher", new_teacher_path %>
+<% end %>

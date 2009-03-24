@@ -1,0 +1,17 @@
+<h1>New Shift</h1>
+
+Course: <strong><%= @course.name %></strong>
+
+<%= error_messages_for :shift %>
+
+<% form_for [@course,@shift] do |f|%>
+  <%= f.label       :time, "Time:" %><br/>
+  <%= f.select      :time, [["Afternoon"],["Night"],["Morning"]]  %><br/> <!--can this be refactored?-->
+  <%= f.label       :vacants, "Vacants:" %><br/>
+  <%= f.text_field  :vacants %><br/>
+  <%= f.submit "Create Shift" %>
+<% end %>
+
+<% content_for :actions do%>
+  <%= link_to "Cancel",course_path(@course) %>
+<% end%>

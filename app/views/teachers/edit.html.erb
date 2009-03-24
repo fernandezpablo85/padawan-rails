@@ -1,0 +1,15 @@
+<h1>Edit Teacher</h1>
+
+<%= error_messages_for :teacher %>
+
+<% form_for @teacher, :action => 'update' do |f| %>
+  <%= f.label :name, "Name:" %><br/>
+  <%= f.text_field :name, :disabled => true %><br/>
+  <%= f.label :mail, "Mail:" %> <br/>
+  <%= f.text_field :mail %> <br/>
+  <%= f.submit "Update" %>
+<% end %>
+ 
+<% content_for :action do %>
+  <%= link_to "Cancel", :back %>
+<% end %>

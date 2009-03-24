@@ -1,0 +1,31 @@
+
+<h1>Student Details</h1>
+
+Name: <%= @student.name %><br>
+Age: <%= @student.age %><br>
+
+<% if @student.inscriptions.size > 0 then %>
+
+  <% @student.inscriptions.each do |i| %>
+    <h3> Inscriptions</h3> 
+    <h4>Course: <%= i.shift.course.name %></h4>
+
+    <ul>
+      <li> Found by: <%= i.how %></li>
+      <li> Teacher: <%= i.shift.teacher.name %> </li>
+      <li> Time: <%= i.shift.time %></li>
+      <li> <%= link_to 'cancel inscription', student_inscription_path(@student,i), :method => :delete, :id => 'cancel_i' %> </li>
+    </ul>
+
+  <% end %>
+ 
+<% else %>
+  Has no Inscriptions <br/>
+<% end %>
+
+<%content_for :actions do%>
+  <%= link_to "Inscribe", student_inscriptions_path(@student) %>
+  <%= link_to "Edit", edit_student_path(@student) %> 
+  <%= link_to "Delete", student_path(@student), {:confirm => "Are you sure?", :method => :delete} %>
+  <%= link_to "Back To List", students_path %>
+<% end %>

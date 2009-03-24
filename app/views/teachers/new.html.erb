@@ -1,0 +1,15 @@
+<h1> Create Teacher </h1>
+
+<%= error_messages_for :teacher %>
+
+<% form_for @teacher, :action => 'create' do |f| %>
+  <%= f.label :name, "Name:" %><br/>
+  <%= f.text_field :name %><br/>
+  <%= f.label :mail, "Mail:" %> <br/>
+  <%= f.text_field :mail %> <br/>
+  <%= f.submit "Create" %>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to "Back To List", teachers_path %>
+<% end %>

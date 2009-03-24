@@ -1,0 +1,13 @@
+<h1>Add a teacher to this Shift</h1>
+Course: <%= @shift.course.name %><br/>
+Shift: <%= @shift.time %><br/>
+
+<% form_tag do%>
+  <%= label_tag :teacher_name, "Teacher:" %>
+  <%= select_tag :teacher_name, options_for_select(@teachers.collect { |t| [t.name] }) %><br/>
+  <%= submit_tag "Add teacher" %><br/>
+<% end %>
+
+<% content_for :actions do%>
+  <%= link_to "Cancel",course_path(@shift.course) %>
+<% end%>

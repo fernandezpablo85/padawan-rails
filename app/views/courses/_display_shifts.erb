@@ -1,0 +1,20 @@
+<% return if course.shifts.size == 0 %>
+
+<h3>Shifts:</h3>
+<% course.shifts.each do |shift| %>
+  <h4>Time: <%= shift.time %></h4>
+  <ul>
+    <li>Vacants: <%= shift.vacants %></li>
+    <li>
+      Teacher:
+      <% if shift.teacher.nil? then -%>
+        <strong>Vacant</strong> <%= link_to "(Add Teacher)", course_shift_list_teachers_path(:shift_id => shift,:course_id => course)  %>
+      <% else -%>
+        <%= link_to shift.teacher.name, teacher_path(shift.teacher)%>
+      <% end -%>
+    </li>
+    <li><%= link_to "delete shift", course_shift_path(course,shift), :method => :delete, :confirm => 'Are you Sure?' %></li>
+  </ul>
+<% end %>
+
+

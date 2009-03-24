@@ -1,0 +1,11 @@
+<h1> Courses List </h1>
+
+<% @courses.each do |course| %>
+  Name: <%= link_to course.name, course_path(course) %> <br/>
+  Description: <%= course.description %> <br/>
+  <hr/>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to "Create New Course", new_course_path %>
+<% end %>

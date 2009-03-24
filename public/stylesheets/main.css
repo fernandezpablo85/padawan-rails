@@ -1,0 +1,167 @@
+/*************
+ ** @COMMON **
+ *************/
+body 
+{ 
+  font-family: monospace;
+}
+.fieldWithErrors
+{
+  display:inline;
+}
+.boxed
+{
+  border:1px solid grey;
+}
+a
+{
+  color:#0066CC;
+  text-decoration:none;
+}
+a:hover
+{
+  text-decoration:underline;
+}
+a:visited
+{
+  color:#114477;
+}
+hr
+{
+  width:400px;
+  margin-left:0px;
+}
+#info_panel
+{
+  font-size: large;
+}
+#info_panel .notice
+{
+  color:#0066CC;
+  text-decoration:bold;
+}
+#info_panel .error
+{
+  color:red;
+  text-decoration:bold;
+}
+/*************
+ ** @HEADER **
+ *************/
+#header
+{
+  width:650px;
+  margin:0 0 10 20;
+  float:left;
+}
+
+#header h1
+{
+  margin: 25px;
+}
+#header h1 img
+{
+  vertical-align:middle;
+}
+#header h2
+{
+  margin: 0px 0px 10px 25px;
+  font-size:medium;
+  color:gray;
+  letter-spacing:0.3em;
+}
+#header h2 strong
+{
+  color:#0066CC;
+  text-decoration:bold;
+}
+
+#info_header
+{ 
+  background-color:blue;
+  margin-left:50px;
+  width:250px;
+  float:left;
+}
+#info_header h1,p
+{
+  color:white;
+  margin:5px;
+}
+/*************
+ ** @CONTENT *
+ *************/
+
+#content
+{
+  width:780px;
+  margin:15px 0px 20px 20px;
+  padding:15 0 20 20;
+}
+#content form *
+{
+  margin:5px;
+}
+
+
+/*************
+ ** @NAV *****
+ *************/
+.nav_list
+{
+  margin:25 0 20 20;
+}
+/*.nav_list ul
+{ 
+  padding: 0;
+}
+.nav_list li
+{
+  display: inline;
+  list-style-type:none;
+  margin-right:15px;
+}*/
+.nav_list a
+{
+  padding:10px 15px;
+  border:0.1em solid gray;
+}
+/*************
+** @ERRORS ***
+**************/
+#errorExplanation
+{
+  float:right;
+  width:260px;
+  border: 1px solid red;
+  padding: 5 10;
+  position:relative; top: -70px; right: 10px;
+  
+}
+#errorExplanation h2
+{
+  color:red;
+}
+#errorExplanation p
+{
+  display:none;
+}
+#content form *.fieldWithErrors
+{
+  margin:0;
+}
+.fieldWithErrors label
+{
+  padding-left:20px;
+  background:url(../images/field_error.png) no-repeat left center;
+}
+
+/*************
+ ** @FOOTER **
+ *************/
+#footer
+{
+  width:800px;
+  margin:0px 0px 20px 20px;
+  text-align:center;
+}

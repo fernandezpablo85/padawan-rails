@@ -1,0 +1,13 @@
+<h1> Course Details </h1>
+
+Name: <%= @course.name %><br/>
+Description: <%= @course.description %><br/>
+
+<%= render :partial => 'display_shifts', :locals => {:course => @course} %>
+
+<% content_for :actions do %>
+  <%= link_to "Delete", {:action => 'destroy'},:confirm => "do you really want to delete this?", :method => :delete %>
+  <%= link_to "Edit",         edit_course_path %>
+  <%= link_to "Create Shift", new_course_shift_path(@course) %>
+  <%= link_to "Back To List", courses_path %>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Edit Student</h1>
+
+<%= error_messages_for :student %>
+
+<% form_for :student, @student, :url => {:action => "update"}, :html => {:method => :put} do |f| %>
+  <%= f.label :name, "Name:" %><br/>
+  <%= f.text_field :name, :disabled => true %> <br/>
+  <%= f.label :age, "Age:" %><br/>
+  <%= f.text_field :age %><br/>
+  <%= f.submit "Edit" %>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to "Cancel", students_path %>
+<% end %>

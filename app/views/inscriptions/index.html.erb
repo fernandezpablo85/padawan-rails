@@ -1,0 +1,13 @@
+<h1>Available Shifts for <%=@student.name%></h1>
+
+<% @shifts.each  do |shift| -%>
+  Course: <%= shift.course.name %><br>
+  Shift: <%= shift.time %><br/>
+  Vacants <%= shift.real_vacants %><br/>
+  <%= link_to "inscribe", student_inscribe_path(@student,shift), :method => :post, :confirm => "Are you sure?" %><br/>
+  <hr>
+<% end -%>
+
+<% content_for :actions do %>
+  <%= link_to "Cancel", student_path(@student) %>
+<% end %>

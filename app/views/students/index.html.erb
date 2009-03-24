@@ -1,0 +1,14 @@
+
+<h1>Students List</h1>
+<% @students.each do |student|%>
+  <div id="row_<%=student.id%>">
+    Name: <%= link_to student.name, student_path(student) %><br/>
+    Age: <%= student.age %><br/>
+    <hr>
+
+  </div>
+<% end %>
+
+<% content_for :actions do%>
+   <%= link_to 'Create New Student', new_student_path %>
+<% end %>

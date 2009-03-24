@@ -1,0 +1,9 @@
+*.html
+coverage/*
+log/*
+nbproject/*
+public/*.html
+public/*/*.html
+.svn
+*~
+
